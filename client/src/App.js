@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // `Provider` provides our application with the store which holds the state
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser } from './actions/authActions';
+import { setCurrentUser, logoutUser } from './actions/authActions';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -23,6 +23,16 @@ if(localStorage.jwtToken){
   const decoded = jwt_decode(localStorage.jwtToken);
   // set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));  // we can call anything in our store with `store.dispatch`. this is being called from actions > authActions.js. this helps with making sure we're logged in even if the page is reloaded. 
+
+  // check for expired token
+  const currentTime = Date.now() / 1000;
+  if(decoded.exp < currentTime){  // the object contains the `exp` value
+    // logout user
+    store.dispatch(logoutUser());
+    // todo: clear current profile
+    // redirect to login
+    window.location.href = '/login';
+  }
 }
 
 

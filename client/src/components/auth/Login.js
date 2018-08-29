@@ -21,6 +21,12 @@ class Login extends Component {
 	}
 
 	// lifecycle method
+	componentDidMount(){
+		if(this.props.auth.isAuthenticated){  // check to see if we're logged in
+			this.props.history.push('/dashboard');
+		}
+	}
+
 	componentWillReceiveProps(nextProps){
 		if(nextProps.auth.isAuthenticated){  // if `isAuthenticated` is true then redirect t the dashboard
 			this.props.history.push('/dashboard');

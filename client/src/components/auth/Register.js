@@ -24,6 +24,13 @@ class Register extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
+	// lifecycle components
+	componentDidMount(){
+		if(this.props.auth.isAuthenticated){  // check to see if we're logged in
+			this.props.history.push('/dashboard');
+		}
+	}
+
 	componentWillReceiveProps(nextProps){
 		if(nextProps.errors){
 			this.setState({ errors: nextProps.errors });  // we get errors from our redux state and put into props with mapStateToProps, then when we receive new properties and if errors are included then we'll set it to component state
