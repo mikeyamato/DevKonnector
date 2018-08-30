@@ -4,7 +4,8 @@ import jwt_decode from 'jwt-decode';
 import { GET_ERRORS, SET_CURRENT_USER } from './types';
 
 // register user
-export const registerUser = (userData, history) => dispatch => {  // `dispatch` part of thunk deals with asynchronous data from our backend 
+export const registerUser = (userData, history) => dispatch => {  // `dispatch` part of thunk deals with asynchronous data from our backend. `dispatch` means send an action to the reducer, who in turn checks the switch-case to see what to do for the action you dispatched.
+ 
 	axios.post('/api/users/register', userData)
 		.then(res => history.push('/login'))  // if successful redirect to login
 		.catch(err => 
