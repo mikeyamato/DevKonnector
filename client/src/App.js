@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // `BrowserRouter` mimics a server. we are renaming it as well. 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // `Provider` provides our application with the store which holds the state
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
@@ -10,12 +10,15 @@ import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
 import store from './store';
 
+import PrivateRoute from './components/common/PrivateRoute';
+
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/create-profile/CreateProfile';
 
 import './App.css';
 
@@ -52,7 +55,12 @@ class App extends Component {
             <div className='container'>
               <Route exact path='/register' component={ Register } />
               <Route exact path='/login' component={ Login } />
-              <Route exact path='/dashboard' component={ Dashboard } />
+              <Switch>  {/* this will help prevent weird redirect issues */}
+                <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+              </Switch>
+              <Switch>  {/* this will help prevent weird redirect issues */}
+                <PrivateRoute exact path='/create-profile' component={ CreateProfile } />
+              </Switch>
             </div>
             <Footer />
           </div>

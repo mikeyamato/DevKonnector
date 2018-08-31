@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS, CLEAR_CURRENT_PROFILE } from './types';
+import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_ERRORS } from './types';
 
 // get current profile
 export const getCurrentProfile = () => dispatch => {
@@ -20,6 +20,17 @@ export const getCurrentProfile = () => dispatch => {
 				payload: {}  // if no profile, return an empty profile
 			})
 		);
+}
+
+// create profile
+export const createProfile = (profileData, history) => dispatch => {  // takes in 2 arguments. `history` has to do with redirections
+	axios
+		.post('/api/profile', profileData)  // take in `profileData`
+		.then(res => history.push('/dashboard'))	 // once we get the results, redirect back to the dashboard
+		.catch(err => dispatch({
+			type: GET_ERRORS,   // will go through the errors reducer
+			payload: err.response.data
+		}));
 }
 
 // profile loading
