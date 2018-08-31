@@ -143,15 +143,11 @@ class CreateProfile extends Component {
 				<div className='container'>
 					<div className='row'>
 						<div className="col-md-8 m-auto">
-							<h1 className="display-4 text-center">
-								create your profile
-							</h1>
+							<h1 className="display-4 text-center">create your profile</h1>
 							<p className="lead text-center">
 								let's get some information to make your profile stand out.
 							</p>
-							<small className="d-block pb-3">
-								* = required fields
-							</small>
+							<small className="d-block pb-3">* = required fields</small>
 							<form onSubmit={this.onSubmit}>
 								{/* Handle */}
 								<TextFieldGroup 
@@ -228,7 +224,9 @@ class CreateProfile extends Component {
 								/>
 								{/* Social */}
 								<div className="mb-3">
-									<button onClick={() => {
+									<button 
+										type='button'
+										onClick={() => {
 										this.setState(prevState => ({  // set state, then pass in `prevState`
 											displaySocialInputs: !prevState.displaySocialInputs  // state will toggle `displaySocialInputs`
 										}))
