@@ -20,6 +20,8 @@ import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
+import AddExperience from './components/add-credentials/AddExperience';
+import AddEducation from './components/add-credentials/AddEducation';
 
 import './App.css';
 
@@ -60,16 +62,22 @@ class App extends Component {
                 <PrivateRoute exact path='/dashboard' component={ Dashboard } />
               </Switch>
               <Switch>  {/* this will help prevent weird redirect issues */}
-                <PrivateRoute 
+                <PrivateRoute   // protected route
                   exact 
                   path='/create-profile' 
                   component={ CreateProfile } />
               </Switch>
               <Switch>  {/* this will help prevent weird redirect issues */}
-                <PrivateRoute 
+                <PrivateRoute   // protected route
                   exact 
                   path='/edit-profile' 
                   component={ EditProfile } />
+              </Switch>
+              <Switch>  {/* this will help prevent weird redirect issues */}
+                <PrivateRoute   // protected route
+                  exact 
+                  path='/add-experience' 
+                  component={ AddExperience } />;
               </Switch>
             </div>
             <Footer />
