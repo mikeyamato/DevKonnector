@@ -29,15 +29,15 @@ const TextFieldGroup = ({  // pass in the many differnt properties this will tak
 				onChange={onChange}  // instead of `onChange={this.onChange}`
 				disabled={disabled}
 			/>
-			{info && <small className='form-text text-muted'>{info}</small>} 
-			{error && (  // instead of `errors.email`
-				<div className='invalid-feedback'>
+			{info && <small className="form-text text-muted">{info}</small>} 
+			{error &&  // instead of `errors.email`
+				<div className="invalid-feedback">
 					{error}  {/* instead of `errors.email` */}
 				</div>
-			)}
+			}
 		</div>
-	)
-}
+	);
+};
 
 // add propTypes
 TextFieldGroup.propTypes = {
@@ -47,7 +47,7 @@ TextFieldGroup.propTypes = {
 	info: PropTypes.string,
 	error: PropTypes.string,
 	type: PropTypes.string.isRequired,
-	onChange: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
 	disabled: PropTypes.string
 }
 
