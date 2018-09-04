@@ -3,7 +3,8 @@
 import { 
 	ADD_POST, 
 	GET_POSTS, 
-	POST_LOADING 
+	POST_LOADING,
+	DELETE_POST 
 } from '../actions/types';
 
 const initialState = {
@@ -29,6 +30,11 @@ export default function (state = initialState, action){
 			return {  // return anything in the state object, and with posts, we'll want the new post and the current post (`state.post`). 
 				...state,
 				posts: [action.payload, ...state.post]
+			}
+		case DELETE_POST:
+			return {
+				...state,
+				posts: state.posts.filter(post => post._id !== action.payload)  // `action.payload` is the post we want to delete. this will delete the post locally (deleting from state)
 			}
 		default: 
 			return state;
