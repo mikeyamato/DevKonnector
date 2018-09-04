@@ -2,7 +2,14 @@
 
 import axios from 'axios';
 
-import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_ERRORS, SET_CURRENT_USER } from './types';
+import { 
+	GET_PROFILE, 
+	GET_PROFILES,  // also include in `profileReducer.js`
+	PROFILE_LOADING, 
+	CLEAR_CURRENT_PROFILE, 
+	GET_ERRORS, 
+	SET_CURRENT_USER
+} from './types';
 
 // get current profile
 export const getCurrentProfile = () => dispatch => {
@@ -18,6 +25,24 @@ export const getCurrentProfile = () => dispatch => {
 			dispatch({
 				type: GET_PROFILE,
 				payload: {}  // if no profile, return an empty profile
+			})
+		);
+}
+
+// get profile by handle
+export const getProfileByHandle = (handle) => dispatch => {
+	dispatch(setProfileLoading());  // set loading state before it does the request
+	axios.get(`/api/profile/handle/${handle}`)   // when we hit this endpoint, it's going to call GET_PROFILE and pass along the data (res.data). then profileReducer.js will use this payload. 
+		.then(res => 
+			dispatch({
+				type: GET_PROFILE,
+				payload: res.data
+			})
+		)
+		.catch(err => 
+			dispatch({
+				type: GET_PROFILE,
+				payload: null  
 			})
 		);
 }
@@ -91,6 +116,25 @@ export const deleteEducation = (id) => dispatch => {
 			dispatch({
 				type: GET_ERRORS,
 				payload: err.response.data
+			})
+		);
+};
+
+// get all profiles
+export const getProfiles = () => dispatch => {
+	dispatch(setProfileLoading());
+	axios
+		.get('/api/profile/all')
+		.then(res => 
+			dispatch({
+				type: GET_PROFILES,  // plural
+				payload: res.data
+			})
+		)
+		.catch(err => 
+			dispatch({
+				type: GET_PROFILES,
+				payload: null
 			})
 		);
 };
