@@ -13,14 +13,14 @@ DevKonnector is a social platform for developers. Create profiles, add posts, an
 To run locally download to your local machine and run the following commands:
 
 ```sh
-npm install
-cd client
-npm install
-cd ..
+$ npm install
+$ cd client
+$ npm install
+$ cd ..
 ```
 Go to `config` -> `keys_dev-sample.js` and follow the instructions. Then...
 ```sh
-npm run dev
+$ npm run dev
 ```
 
 The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com).
