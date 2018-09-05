@@ -23,7 +23,7 @@ Go to `config` -> `keys_dev-sample.js` and follow the instructions. Then...
 npm run dev
 ```
 
-The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com" target="_blank)
+The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com)
 
 <sub>Note: since this is a free Heroku account there may be slight response delay while the server spins up.</sub>
 
