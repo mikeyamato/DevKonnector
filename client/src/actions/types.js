@@ -1,6 +1,7 @@
 // with action you make use of connect in a component (container) you need to include the action(s) that your reducer (which takes an action and returns a new state) will listen out for.
 
 export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const GET_PROFILE = 'GET_PROFILE';
 export const PROFILE_LOADING = 'PROFILE_LOADING';
