@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'; 
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class ProfileGithub extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			clientId: '3f840b25495ff734dc4c',
-			clientSecret: '41ccd0ed9862a6f6826ee115b6b05e7b9803baca',
+			clientId: process.env.REACT_APP_CLIENT_ID,
+			clientSecret: process.env.REACT_APP_CLIENT_SECRET,
 			count: 5,
 			sort: 'created: asc',
 			repos: []
