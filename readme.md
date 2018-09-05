@@ -1,4 +1,4 @@
-# README &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE)  
+# README &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](#license)  
 
 DevKonnector is a social platform for developers. Create profiles, add posts, and connect with other developers.  
 
@@ -34,7 +34,7 @@ Languages, libraries, applications and packages used:
 - [JavaScript (ES6)](http://es6-features.org/)
 - [React](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
-- [Passport](www.passportjs.org/)
+- [Passport](http://www.passportjs.org/)
 - [JWT Authentication](https://jwt.io/)
 - [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
@@ -43,6 +43,7 @@ Languages, libraries, applications and packages used:
 - [bcrypt](https://www.npmjs.com/package/bcryptjs)
 - [Moment.js](https://momentjs.com/)
 - [Axios](https://www.npmjs.com/package/axios)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## License
 
