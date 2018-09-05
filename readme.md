@@ -1,4 +1,4 @@
-# README
+# README &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE)  
 
 DevKonnector is a social platform for developers. Create profiles, add posts, and connect with other developers.  
 
@@ -24,6 +24,7 @@ npm run dev
 ```
 
 The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com).
+
 <sub>Note: since this is a free Heroku account there may be slight response delay while the server spins up.</sub>
 
 ## Technology
