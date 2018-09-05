@@ -23,26 +23,25 @@ Go to `config` -> `keys_dev-sample.js` and follow the instructions. Then...
 npm run dev
 ```
 
-The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com)
-
+The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com).
 <sub>Note: since this is a free Heroku account there may be slight response delay while the server spins up.</sub>
 
 ## Technology
 
 Languages, libraries, applications and packages used:
 
-- JavaScript (ES6)
-- React
-- Redux
-- Passport
-- JWT Authentication
-- Node.js
-- Express.js
-- MongoDB (mLab)
-- Heroku
-- bcrypt
-- Moment.js
-- Axios
+- [JavaScript (ES6)](http://es6-features.org/)
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Passport](www.passportjs.org/)
+- [JWT Authentication](https://jwt.io/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [MongoDB (mLab)](https://mlab.com/)
+- [Heroku](https://www.heroku.com/)
+- [bcrypt](https://www.npmjs.com/package/bcryptjs)
+- [Moment.js](https://momentjs.com/)
+- [Axios](https://www.npmjs.com/package/axios)
 
 ## License
 
