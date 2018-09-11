@@ -25,7 +25,7 @@ $ npm run dev
 
 The application can also be [accessed via Heroku](https://mysterious-anchorage-53220.herokuapp.com).
 
-<sub>Note: since this is a free Heroku account there may be slight response delay while the server spins up.</sub>
+<sub>Note: since this uses a free Heroku account there may be a slight response delay while the server spins up.</sub>
 
 ## Technology
 
