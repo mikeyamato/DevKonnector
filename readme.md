@@ -40,7 +40,7 @@ Languages, libraries, applications and packages used:
 - [Express.js](https://expressjs.com/)
 - [MongoDB (mLab)](https://mlab.com/)
 - [Heroku](https://www.heroku.com/)
-- [bcrypt](https://www.npmjs.com/package/bcryptjs)
+- [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
 - [Moment.js](https://momentjs.com/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [Bootstrap](https://getbootstrap.com/)
